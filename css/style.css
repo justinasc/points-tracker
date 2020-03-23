@@ -3,10 +3,31 @@ body {
   display: flex;
   height: 100vh;
   margin: 0;
-  background: #7676b5;
-  font-family: 'Jaldi', sans-serif;
+  animation: 20000ms ease-in-out infinite color-change;
+  font-family: 'Amatic SC', cursive;
   font-size: 14px;
   color: white;
+}
+
+@keyframes color-change {
+  0% {
+    background-color: teal;
+  }
+  20% {
+    background-color: gold;
+  }
+  40% {
+    background-color: indianred;
+  }
+  60% {
+    background-color: violet;
+  }
+  80% {
+    background-color: rgb(62, 224, 62);
+  }
+  100% {
+    background-color: teal;
+  }
 }
 
 #wrapper {
@@ -14,6 +35,20 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+path {
+  fill: transparent;
+}
+
+.title {
+  width: 200px;
+  height: 100px;
+  font-size: 8em;
+}
+
+img {
+  height: 100px;
 }
 
 p {
@@ -93,7 +128,9 @@ p {
   line-height: 1;
   transform: translateY(50%);
   left: calc(100% + 1em / 1.5);
-  top: calc(-1em + 5px - 5px * 3);
+  top: calc(-1em + 5px - 5px * 2);
+  width: 60px;
+  text-align: center;
 }
 #termometer #points:after {
   content: "";
@@ -255,7 +292,7 @@ input[type="range"]:disabled::-ms-fill-upper {
 
 
 
-#termometer #goal-1 {
+#termometer #goal {
     bottom: 0;
     /* background: linear-gradient(#f17a65, #3dcadf) no-repeat bottom; */
     width: 100%;
@@ -263,10 +300,10 @@ input[type="range"]:disabled::-ms-fill-upper {
     background-size: 100% 400px;
     transition: all 0.2s ease-in-out;
   }
-  #termometer #goal-1, #termometer #goal-1:before, #termometer #goal-1:after {
+  #termometer #goal, #termometer #goal:before, #termometer #goal:after {
     position: absolute;
   }
-  #termometer #goal-1:before {
+  #termometer #goal:before {
     content: attr(data-value);
     background: rgba(0, 0, 0, 0.7);
     color: white;
@@ -277,42 +314,11 @@ input[type="range"]:disabled::-ms-fill-upper {
     line-height: 1;
     transform: translateY(50%);
     right: calc(100% + 1em / 1.5);
-    top: calc(-1em + 5px - 5px * 3);
+    top: calc(-1em + 5px - 5px * 2);
+    width: 140px;
+    text-align: center;
   }
-  #termometer #goal-1:after {
-    content: "";
-    border-top: 0.4545454545em solid transparent;
-    border-bottom: 0.4545454545em solid transparent;
-    border-left: 0.6666666667em solid rgba(0, 0, 0, 0.7);
-    right: 100%;
-    top: calc(-1em / 2.2 + 5px);
-  }
-
-#termometer #goal-2 {
-    bottom: 0;
-    /* background: linear-gradient(#f17a65, #3dcadf) no-repeat bottom; */
-    width: 100%;
-    border-radius: 20px;
-    background-size: 100% 400px;
-    transition: all 0.2s ease-in-out;
-  }
-  #termometer #goal-2, #termometer #goal-2:before, #termometer #goal-2:after {
-    position: absolute;
-  }
-  #termometer #goal-2:before {
-    content: attr(data-value);
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
-    z-index: 2;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 1em;
-    line-height: 1;
-    transform: translateY(50%);
-    right: calc(100% + 1em / 1.5);
-    top: calc(-1em + 5px - 5px * 3);
-  }
-  #termometer #goal-2:after {
+  #termometer #goal:after {
     content: "";
     border-top: 0.4545454545em solid transparent;
     border-bottom: 0.4545454545em solid transparent;
